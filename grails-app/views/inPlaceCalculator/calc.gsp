@@ -4,6 +4,19 @@
     <title>
         In-Place Calculator
     </title>
+    <script>
+        function validate(event){
+            var inputField = event.target;
+            if (inputField.value < 1.0 || inputField.value > 6.0) {
+                window.alert(inputField.name + " value is invalid!");
+            }
+        }
+        function attachValidator() {
+            document.getElementById('en').addEventListener('change', validate);
+            document.getElementById('exam').addEventListener('change', validate);
+        }
+        document.addEventListener('DOMContentLoaded', attachValidator);
+    </script>
 </head>
 
 <body>
